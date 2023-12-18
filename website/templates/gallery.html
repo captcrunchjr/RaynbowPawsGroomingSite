@@ -1,0 +1,43 @@
+{%extends "base.html" %}
+{% block title %}Gallery{%endblock%}
+{% block container %}
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/gallery.js') }}" defer></script>
+    <div class="gallery">
+        <div>
+            <img src="../static/images/boot1.jpg">
+        </div>
+        <div>
+            <img src="../static/images/sherm1.jpg">
+        </div>
+        <div>
+            <img src="../static/images/festus1.jpg">
+        </div>
+        <div>
+            <img src="../static/images/boot2.jpg">
+        </div>
+        <div>
+            <img src="../static/images/sherm2.jpg">
+        </div>
+        <div>
+            <img src="../static/images/murdock.jpg">
+        </div>
+        <div>
+            <img src="../static/images/boot3.jpg">
+        </div>
+        <div>
+            <img src="../static/images/sherm3.jpg">
+        </div>
+        <div>
+            <img src="../static/images/festus2.jpg">
+        </div>
+    </div>
+
+    <div id="display" class="hide">
+        <div class="backdrop">
+            <div class="displayedimage">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="close"><span>[X]</span></div>
+</div>
+{%endblock%}

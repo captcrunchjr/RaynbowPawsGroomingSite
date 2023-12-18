@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Raynbow Paws Grooming{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/index.js') }}" defer></script>
+</head>
+<body>
+    <!-- nav/logo/title-->
+    <header class="header">
+        <div id="logoheader"></div>
+        <nav>
+            <ul>
+                <li><a id="index" href="./">Home</a></li>
+                <li>|</li>
+                <li><a id="services" href="./services">Services</a></li>
+                <li>|</li>
+                <li><a id="gallery" href="./gallery">Gallery</a></li>
+                <li>|</li>
+                <li><a id="aboutus" href="./aboutus">About Us</a></li>
+                <li>|</li>
+                <li><a id="appointments" href="./appointments">Appointments</a></li>
+                <li>|</li>
+                <li class="additional-nav">User</li>
+                <div class="collapser">
+                    <li><a id="registration" href="./registration">Registration</a></li>
+                    <li>|</li>
+                    <li><a id="Login" href="./login">Login</a></li>
+                    <li>|</li>
+                    <li><a id="userprofile" href="./userprofile">User Profile</a></li>
+                </div>
+            </ul>
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            {% if category == 'error' %}
+                <div class="alert alert-danger alert-dismissable fade show">
+                    {{message}}
+                </div>
+            {% else %}
+                <div class="alert alert-success alert-dismissable fade show">
+                    {{message}}
+                </div>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </header>
+
+    <div class="container">
+        {% block container %}
+        {% endblock %}
+    </div>
+
+    <!-- Additional links/content-->
+    <div>
+
+    </div>
+    
+    <!--footer-->
+    <footer>
+        <ul class="socials">
+            <!--<li><a href="https://www.facebook.com/raynbowpawsgroomingllc/"><i class="fa-brands fa-facebook-f"></i></icon>Facebook</a></li>-->
+            <a href="https://www.facebook.com/raynbowpawsgroomingllc" class="fa fa-facebook"></a>
+            <li>All materials are property of Raynbow Paws Grooming, LLC.</li>
+        </ul>
+    </footer>
+</body>
+</html>

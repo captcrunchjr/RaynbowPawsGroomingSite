@@ -1,0 +1,56 @@
+{%extends "base.html" %}
+{% block title %}Services{%endblock%}
+{% block container %}
+
+    <!-- 3 option selection panel-->
+    <div class="main">
+        <h1 class="services-header">Services</h1>
+        <div class="services-main">
+            <!--<img src="./images/raynbowlogofirst.jpg" height="150" alt="logo">-->
+            <img src="../static/images/prices.jpg" width="400px">
+            <table>
+                <caption>Prices</caption>
+                <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Small</th>
+                    <th>Medium</th>
+                    <th>Large</th>
+                </tr>
+                <tr>
+                    <th>Nail Trim</th>
+                    <td>$10</td>
+                    <td>$12</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <th>Bath</th>
+                    <td>$30</td>
+                    <td>$40</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <th>Trim</th>
+                    <td>$35</td>
+                    <td>$50</td>
+                    <td>$70</td>
+                </tr>
+                <tr>
+                    <th>Full Groom</th>
+                    <td>$45</td>
+                    <td>$65</td>
+                    <td>$85</td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            *Small dogs under 20lbs<br>Medium dogs 20-40lbs<br>Large dogs 40+lbs
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+    </div>
+{% endblock %}
